@@ -1,14 +1,22 @@
 extends layout
 
 block content
-  h1 Hello, world!
-  script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm' crossorigin='anonymous')
-  .card(style='width: 18rem;')
-    img.card-img-top(src='...' alt='...')
-    .card-body
-      h5.card-title Card title
-      p.card-text
-        Some quick example text to build on the card title and make up the bulk of the card&apos;s content.
-      a.btn.btn-primary(href='#') Go juan
+  nav
+    img.lupa_nav(src='./images/home_page/lupa.png')
+    input.input_search_nav
+    .personajes_nav PERSONAJES
+    .album_nav ALBUM
+    .mi_album_nav MI ALBUM
+    img.cuenta_nav(src='./images/home_page/account.png')
+  main
+    img.logo_main(src='./images/home_page/logoMarvel.png')
+    img.flecha_izquierda(src='./images/home_page/izquierda.png')
+    .main_cards
+      img.img_card(src='./images/home_page/spiderMan.png')
+      .contenido_card
+        h2 SPIDERMAN
+        p
+          | Spider-Man, traducido en ocasiones como el Hombre Ara&ntilde;a,es un personaje creado por los estadounidenses Stan Lee y Steve Ditko e introducido en el c&oacute;mic Amazing Fantasy n.&deg; 15, publicado por Marvel Comics en agosto de 1962
+    img.flecha_derecha(src='./images/home_page/derecha.png')
 
 
