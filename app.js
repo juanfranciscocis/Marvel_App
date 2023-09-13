@@ -6,6 +6,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./appServer/routes/index');
 const usersRouter = require('./appServer/routes/users');
+const personajesRouter = require('./appServer/routes/personajes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/personajes", personajesRouter); //añadimos la ruta de personajes
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

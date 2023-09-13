@@ -68,6 +68,11 @@ nav {
     margin-left: 5em;
 }
 
+a{
+    color: black !important;
+    text-decoration: none !important;
+}
+
 main {
     position: relative; /* Set the position to relative to enable pseudo-element positioning */
     height: 100vh; /* Set the height to fill the viewport */

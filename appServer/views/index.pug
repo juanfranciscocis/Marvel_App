@@ -1,22 +1,28 @@
 extends layout
 
 block content
+  link(rel='stylesheet', href='/stylesheets/home.css')
   nav
-    img.lupa_nav(src='./images/home_page/lupa.png')
-    input.input_search_nav
-    .personajes_nav PERSONAJES
-    .album_nav ALBUM
-    .mi_album_nav MI ALBUM
-    img.cuenta_nav(src='./images/home_page/account.png')
+    img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
+    input#input_search_nav.input_search_nav
+    a(href='personajes')
+      #personajes_nav.personajes_nav PERSONAJES
+    a(href='album')
+      #album_nav.album_nav ALBUMS
+    a(href='mi_album')
+      #mi_album_nav.mi_album_nav MI ALBUM
+    a(href='cuenta')
+      img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
   main
-    img.logo_main(src='./images/home_page/logoMarvel.png')
-    img.flecha_izquierda(src='./images/home_page/izquierda.png')
+    img.logo_main(src='../images/home_page/logoMarvel.png')
+    img#flecha_izquierda_home_page.flecha_izquierda(src='../images/home_page/izquierda.png')
     .main_cards
-      img.img_card(src='./images/home_page/spiderMan.png')
+      img#imagen_personaje_home_page.img_card(src='../images/home_page/spiderMan.png')
       .contenido_card
-        h2 SPIDERMAN
-        p
+        h2#titulo_personaje_home_page SPIDERMAN
+        p#descripcion_personaje_home_page
           | Spider-Man, traducido en ocasiones como el Hombre Ara&ntilde;a,es un personaje creado por los estadounidenses Stan Lee y Steve Ditko e introducido en el c&oacute;mic Amazing Fantasy n.&deg; 15, publicado por Marvel Comics en agosto de 1962
-    img.flecha_derecha(src='./images/home_page/derecha.png')
+    img#flecha_derecha_home_page.flecha_derecha(src='../images/home_page/derecha.png')
+
 
 
