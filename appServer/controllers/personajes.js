@@ -1,6 +1,6 @@
 //controllers
 
-// homepage - GET
+// personajes - GET
 const personajes = (req, res, next) =>{
     res.render('personajes', { title: 'PERSONAJES' });
 }
