@@ -3,9 +3,9 @@ const express = require('express');
 const router = express.Router();
 // my modules
 //controllers
-const {personajes} = require("../controllers/personajes");
+const {mi_album} = require("../controllers/mi_album");
 
-/* GET personajes. */
-router.get('/', personajes);
+/* GET mi_album */
+router.get('/', mi_album);
 
 module.exports = router;

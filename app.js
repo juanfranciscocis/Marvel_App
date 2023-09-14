@@ -8,6 +8,7 @@ const indexRouter = require('./appServer/routes/index');
 const usersRouter = require('./appServer/routes/users');
 const personajesRouter = require('./appServer/routes/personajes');
 const personajes_descripcionRouter = require('./appServer/routes/personajes_descripcion');
+const mi_albumRouter = require('./appServer/routes/mi_album');
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/personajes", personajesRouter); //añadimos la ruta de personajes
 app.use("/personajes_descripcion", personajes_descripcionRouter); //añadimos la ruta de personajes_descripcion
+app.use("/mi_album", mi_albumRouter); //añadimos la ruta de mi_album
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

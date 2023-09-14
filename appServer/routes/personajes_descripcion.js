@@ -5,7 +5,7 @@ const router = express.Router();
 //controllers
 const {personajes_descripcion} = require("../controllers/personajes_descripcion");
 
-/* GET home page. */
+/* GET personajes_descripcion */
 router.get('/', personajes_descripcion);
 
 module.exports = router;
