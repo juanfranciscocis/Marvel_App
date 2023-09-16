@@ -1,0 +1,53 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/register.css')
+  
+  nav
+    img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
+    input#input_search_nav.input_search_nav
+    a(href='personajes')
+      #personajes_nav.personajes_nav PERSONAJES
+    a(href='album')
+      #album_nav.album_nav ALBUMS
+    a(href='mi_album')
+      #mi_album_nav.mi_album_nav MI ALBUM
+    a(href='register')
+      img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
+  main
+    a(href='/')
+       img.logo_main(src='../images/home_page/logoMarvel.png')
+    form.modal-content(action='/')
+      .container
+        h1 Registrarse
+        p Crear una cuenta para Wiki Marvel.
+        hr
+        label(for='nombres')
+          b Nombres
+        input(type='text' placeholder='Ingresar nombres' name='nombres' required='true')
+        label(for='apellidos')
+          b Apellidos
+        input(type='text' placeholder='Ingresar apellidos' name='apellidos' required='true')
+        label(for='email')
+          b Email
+        input(type='text' placeholder='Ingresar Email' name='email' required='true')
+        label(for='psw')
+          b Contrase&ntilde;a
+        input(type='password' placeholder='Ingresar contraseña' name='psw' required='true')
+
+        label
+          input(type='checkbox' checked='checked' name='remember' style='margin-bottom:15px')
+          |  Recuerdame
+        .clearfix
+          button.signupbtn(type='submit') Registrarse
+
+    
+     
+     
+
+
+
+
+     
+ 
+

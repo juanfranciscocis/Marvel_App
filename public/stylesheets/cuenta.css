@@ -1,0 +1,144 @@
+
+nav {
+    align-items: center;
+    background-color: #ed221f;
+    border: 1px solid;
+    border-color: black;
+    display: flex;
+    height: 7em;
+    width: 100%;
+    padding: 32px;
+    position: relative;
+    top: 0;
+    justify-content: center;
+}
+
+.lupa_nav{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_search_nav{
+    align-self: flex-start;
+    background-color: white;
+    cursor: pointer;
+    height: 2.5em;
+    margin-left: 1.5em;
+    width: 25em;
+    border: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.personajes_nav{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 20em;
+}
+
+.album_nav{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5em;
+}
+
+.mi_album_nav {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5em;
+}
+
+.cuenta_nav{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 5em;
+}
+
+a{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+main {
+    position: relative; /* Set the position to relative to enable pseudo-element positioning */
+    height: 100vh; /* Set the height to fill the viewport */
+
+    /* Add the background image */
+    background-image: url('images/home_page/fondoMarvel.jpg');
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+
+    /* You can add more styles to your main content as needed */
+}
+
+/* Create a pseudo-element for the gradient overlay */
+main::before {
+    content: "";
+    position: absolute; /* Position the pseudo-element relative to its parent */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(237,34,31,1) 100%);
+}
+
+.logo_main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 13em;
+    padding: 2em 0 0 2em; /* top, right, bottom, left */
+}
+
+/*-------------------------------------------------------------*/
+  
+  /* Add padding to container elements */
+  .container {
+    padding: 16px;
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* Style the horizontal ruler */
+  hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+  }

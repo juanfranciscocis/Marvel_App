@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/cuenta.css')
+  
+  nav
+    img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
+    input#input_search_nav.input_search_nav
+    a(href='personajes')
+      #personajes_nav.personajes_nav PERSONAJES
+    a(href='album')
+      #album_nav.album_nav ALBUMS
+    a(href='mi_album')
+      #mi_album_nav.mi_album_nav MI ALBUM
+    a(href='register')
+      img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
+  main
+    a(href='/')
+       img.logo_main(src='../images/home_page/logoMarvel.png')
+       
+    form.modal-content(action='/')
+      .container
+        h1 MI CUENTA
+        p Mi cuenta en Wiki Marvel.
+        hr
+        label(for='nombres')
+          b Nombres
+        label(for='apellidos')
+          b Apellidos
+        label(for='email')
+          b Email
+        label(for='psw')
+          b Contrase&ntilde;a
+
+
+    
+     
+     
+
+
+
+
+     
