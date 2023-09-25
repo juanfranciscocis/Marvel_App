@@ -18,53 +18,13 @@ block content
             a(href='/')
                 img.logo_main(src='../images/home_page/logoMarvel.png')
         .pop_up
-            #card.card.card_personal
-                img#perfil_usuario_album.imagenes(src='../images/album/usuario.png')
-                h2#nombre_usuario_album #NOMBRE DE USUARIO
-                img#imagen1_usuario_album.imagenes(src='../images/home_page/spiderMan.png')
-                img#imagen2_usuario_album.imagenes(src='../images/home_page/spiderMan.png')
-                img#imagen3_usuario_album.imagenes(src='../images/home_page/spiderMan.png')
-                img#imagen4_usuario_album.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-            .card.card_personal
-                img.imagenes(src='../images/album/usuario.png')
-                h2 #NOMBRE DE USUARIO
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
-                img.imagenes(src='../images/home_page/spiderMan.png')
+            //for each card in cards
+            for album_card in cards
+                .card.card_personal
+                    img.imagenes(src= album_card.imagen_usuario)
+                    h2 #{album_card.nombre_usuario}
+                    img.imagenes(src=album_card.top_personajes[0])
+                    img.imagenes(src=album_card.top_personajes[1])
+                    img.imagenes(src=album_card.top_personajes[2])
+                    img.imagenes(src=album_card.top_personajes[3])
         br

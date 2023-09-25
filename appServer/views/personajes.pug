@@ -18,24 +18,8 @@ block content
             img.logo_main(src='../images/home_page/logoMarvel.png')
         .container.margen
             #columnas_personajes.row
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .con-espacio-entre-filas
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .con-espacio-entre-filas
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .col-md-4
-                    img.imagen_personajes(src='../images/home_page/spiderMan.png')
-                .con-espacio-entre-filas
+                for personaje,index in personajes_page
+                    .col-md-4
+                        img.imagen_personajes(src=personaje)
+                    if index%3 === 2
+                        .con-espacio-entre-filas

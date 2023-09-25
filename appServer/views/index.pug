@@ -17,11 +17,10 @@ block content
     img.logo_main(src='../images/home_page/logoMarvel.png')
     img#flecha_izquierda_home_page.flecha_izquierda(src='../images/home_page/izquierda.png')
     .main_cards
-      img#imagen_personaje_home_page.img_card(src='../images/home_page/spiderMan.png')
+      img#imagen_personaje_home_page.img_card(src=personaje.imagen)
       .contenido_card
-        h2#titulo_personaje_home_page SPIDERMAN
-        p#descripcion_personaje_home_page
-          | Spider-Man, traducido en ocasiones como el Hombre Ara&ntilde;a,es un personaje creado por los estadounidenses Stan Lee y Steve Ditko e introducido en el c&oacute;mic Amazing Fantasy n.&deg; 15, publicado por Marvel Comics en agosto de 1962
+        h2#titulo_personaje_home_page #{personaje.titulo}
+        p#descripcion_personaje_home_page #{personaje.descripcion_personaje}
     img#flecha_derecha_home_page.flecha_derecha(src='../images/home_page/derecha.png')
 
 
