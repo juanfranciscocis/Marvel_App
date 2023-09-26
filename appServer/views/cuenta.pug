@@ -2,42 +2,73 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/cuenta.css')
-  
   nav
     img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
     input#input_search_nav.input_search_nav
-    a(href='personajes')
+    a(href='personajes.html')
       #personajes_nav.personajes_nav PERSONAJES
-    a(href='album')
+    a(href='album.html')
       #album_nav.album_nav ALBUMS
-    a(href='mi_album')
+    a(href='mi_album.html')
       #mi_album_nav.mi_album_nav MI ALBUM
-    a(href='register')
+    a(href='cuenta.html')
       img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
-  main
-    a(href='/')
-       img.logo_main(src='../images/home_page/logoMarvel.png')
-       
-    form.modal-content(action='/')
-      .container
-        h1 MI CUENTA
-        p Mi cuenta en Wiki Marvel.
-        hr
-        label(for='nombres')
-          b Nombres
-        label(for='apellidos')
-          b Apellidos
-        label(for='email')
-          b Email
-        label(for='psw')
-          b Contrase&ntilde;a
-
-
-    
-     
-     
-
-
-
-
-     
+  main(style='display: flex; justify-content: center; align-items: center;')
+    a(href='index.html')
+      img.logo_main(src='../images/home_page/logoMarvel.png')
+    .container.margen
+      #columnas_personajes(style='display: flex; justify-content: space-around;')
+        .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
+          .card-header.title AJUSTES DE CUENTA
+          .card-body
+            div(style='display: flex; justify-content: center; align-items: center; flex-direction: column;')
+              img(src=cuenta_page.imagen)
+              h1.card-title #{cuenta_page.nombre}
+              h5.card-title #{cuenta_page.nombre_usuario}
+              h5.card-title #{cuenta_page.correo}
+            br
+            .row
+              .col-md-6
+                form(action='/cambiar_nombre' method='post')
+                  .form-group
+                    label.card-subtitle(for='nombre') Cambiar Nombre
+                    input#nombre.form-control(type='text' placeholder='Cambiar Nombre')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Nombre
+              .col-md-6
+                form(action='/cambiar_apellido' method='post')
+                  .form-group
+                    label.card-subtitle(for='apellido') Cambiar Apellido
+                    input#apellido.form-control(type='text' placeholder='Cambiar Apellido')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Apellido
+            .row
+              .col-md-6
+                form(action='/cambiar_usuario' method='post')
+                  .form-group
+                    label.card-subtitle(for='usuario') Cambiar Nombre De Usuario
+                    input#usuario.form-control(type='text' placeholder='Cambiar Nombre De Usuario')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Nombre De Usuario
+              .col-md-6
+                form(action='/cambiar_telefono' method='post')
+                  .form-group
+                    label.card-subtitle(for='telefono') Cambiar Telefono
+                    input#telefono.form-control(type='text' placeholder='Cambiar Telefono')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Telefono
+            .row
+              .col-md-6
+                form(action='/cambiar_email' method='post')
+                  .form-group
+                    label.card-subtitle(for='email') Cambiar Email
+                    input#email.form-control(type='email' placeholder='Cambiar Email')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Email
+              .col-md-6
+                form(action='/cambiar_clave' method='post')
+                  .form-group
+                    label.card-subtitle(for='password') Cambiar Clave
+                    input#password.form-control(type='password' placeholder='Cambiar Clave')
+                  .form-group
+                    button.btn.btn-danger(type='submit') Cambiar Clave
