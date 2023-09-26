@@ -11,6 +11,7 @@ const personajes_descripcionRouter = require('./appServer/routes/personajes_desc
 const mi_albumRouter = require('./appServer/routes/mi_album');
 const albumRouter = require('./appServer/routes/album');
 const registerRouter = require('./appServer/routes/register');
+const loginRouter = require('./appServer/routes/login');
 const cuentaRouter = require('./appServer/routes/cuenta');
 
 const app = express();
@@ -34,6 +35,7 @@ app.use("/personajes_descripcion", personajes_descripcionRouter); //añadimos la
 app.use("/mi_album", mi_albumRouter); //añadimos la ruta de mi_album
 app.use("/album", albumRouter); //añadimos la ruta de album
 app.use("/register", registerRouter); //añadimos la ruta de register
+app.use("/login", loginRouter); //añadimos la ruta de login
 app.use("/cuenta", cuentaRouter); //añadimos la ruta de cuenta
 
 // catch 404 and forward to error handler

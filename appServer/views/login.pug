@@ -1,0 +1,38 @@
+extends layout
+
+block content
+
+    link(rel='stylesheet', href='/stylesheets/login.css')
+    nav
+        img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
+        input#input_search_nav.input_search_nav
+        a(href='personajes')
+            #personajes_nav.personajes_nav PERSONAJES
+        a(href='album')
+            #album_nav.album_nav ALBUMS
+        a(href='mi_album')
+            #mi_album_nav.mi_album_nav MI ALBUM
+        a(href='register')
+            img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
+    main(style='height: 100vh; display: flex; justify-content: center; align-items: center;')
+        a(href='/')
+            img.logo_main(src='../images/home_page/logoMarvel.png')
+        .container.margen
+            #columnas_personajes(style='display: flex; justify-content: space-around;')
+                .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
+                    .card-header.title BIENVENIDO A LA MARVEL WIKI
+                    .card-body
+                        h2.card-subtitle.center(style='margin-bottom: 0.5em; font-size: 3em;  text-align: center;') INGRESA PARA ACCEDER A TODO EL CONTENIDO
+                        h4.card-subtitle.center
+                            | &iquest;No tienes cuenta?
+                            a.inicia_sesion(href='/register') Reg&iacute;strate
+                        br
+                        form.custom-form(action='/iniciar_usuario' method='post')
+                            .form-group
+                                label.card-subtitle(for='email') Correo electr&oacute;nico
+                                input#email.form-control(type='text' placeholder='Correo electrónico')
+                            .form-group
+                                label.card-subtitle(for='password') Contrase&ntilde;a
+                                input#password.form-control(type='password' placeholder='Contraseña')
+                            .form-group.text-center
+                                button.btn.btn-outline-dark.btn-danger(type='submit' style='width: 80%') Inicia Sesi&oacute;n

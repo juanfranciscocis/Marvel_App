@@ -2,7 +2,6 @@ extends layout
 
 block content
   link(rel='stylesheet', href='/stylesheets/register.css')
-  
   nav
     img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
     input#input_search_nav.input_search_nav
@@ -14,32 +13,44 @@ block content
       #mi_album_nav.mi_album_nav MI ALBUM
     a(href='register')
       img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
+
   main
     a(href='/')
-       img.logo_main(src='../images/home_page/logoMarvel.png')
-    form.modal-content(action='/')
-      .container
-        h1 Registrarse
-        p Crear una cuenta para Wiki Marvel.
-        hr
-        label(for='nombres')
-          b Nombres
-        input(type='text' placeholder='Ingresar nombres' name='nombres' required='true')
-        label(for='apellidos')
-          b Apellidos
-        input(type='text' placeholder='Ingresar apellidos' name='apellidos' required='true')
-        label(for='email')
-          b Email
-        input(type='text' placeholder='Ingresar Email' name='email' required='true')
-        label(for='psw')
-          b Contrase&ntilde;a
-        input(type='password' placeholder='Ingresar contraseña' name='psw' required='true')
+      img.logo_main(src='../images/home_page/logoMarvel.png')
+    .container.margen
+      #columnas_personajes(style='display: flex; justify-content: space-around;')
+        .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
+          .card-header.title BIENVENIDO A LA MARVEL WIKI
+          .card-body
+            h2.card-subtitle.center(style='margin-bottom: 0.5em; font-size: 3em;  text-align: center;') REGISTRATE PARA ACCEDER A TODO EL CONTENIDO
+            h4.card-subtitle.center
+              | &iquest;Ya tienes cuenta?
+              a.inicia_sesion(href='/login')   Inicia sesi&oacute;n
+            br
+            form.custom-form(action='/registrar_usuario' method='post')
+              .form-group
+                label.card-subtitle(for='nombre') Nombre
+                input#nombre.form-control(type='text' placeholder='Nombre')
+              .form-group
+                label.card-subtitle(for='apellidos') Apellidos
+                input#apellidos.form-control(type='text' placeholder='Apellidos')
+              .form-group
+                label.card-subtitle(for='username') Nombre de usuario
+                input#username.form-control(type='text' placeholder='Nombre de usuario')
+              .form-group
+                label.card-subtitle(for='telefono') Telefono
+                input#telefono.form-control(type='text' placeholder='Telefono')
+              .form-group
+                label.card-subtitle(for='email') Correo electr&oacute;nico
+                input#email.form-control(type='text' placeholder='Correo electrónico')
+              .form-group
+                label.card-subtitle(for='password') Contrase&ntilde;a
+                input#password.form-control(type='password' placeholder='Contraseña')
+              .form-group.text-center
+                button.btn.btn-outline-dark.btn-danger(type='submit' style='width: 80%') Registrarse
 
-        label
-          input(type='checkbox' checked='checked' name='remember' style='margin-bottom:15px')
-          |  Recuerdame
-        .clearfix
-          button.signupbtn(type='submit') Registrarse
+  
+
 
     
      

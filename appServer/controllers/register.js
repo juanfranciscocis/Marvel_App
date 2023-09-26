@@ -1,6 +1,6 @@
 //controllers
 
-// homepage - GET
+// register - GET
 const register = (req, res, next) =>{
     res.render('register', { title: 'REGISTER' });
 }
