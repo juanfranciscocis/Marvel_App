@@ -1,6 +1,9 @@
 //controllers
 
 // cuenta - GET
+
+
+
 cuenta_page = {
     imagen:"../images/cuenta/usuario.png",
     nombre:"Juan Francisco Cisneros",

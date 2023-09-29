@@ -4,6 +4,10 @@ const mongoose = require('mongoose');
 //STRING DE CONEXION -> db uri
 const dbURI = 'mongodb+srv://juanfrancistm2011:06012002jF_@marveldb.rejhjcx.mongodb.net/?retryWrites=true&w=majority';
 
+//REQUERIR EL MODELO
+require('./userSchema');
+require('./personajeSchema');
+
 //READLINE (listen for windows events)
 const readLine = require('readline');
 

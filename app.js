@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 //MONGO REQUIRE
-require('./appServer/models/db'); //INCORPORAR EL MODELO A LA APP
+require('./appApi/models/db'); //INCORPORAR EL MODELO A LA APP
 
 const indexRouter = require('./appServer/routes/index');
 const usersRouter = require('./appServer/routes/users');
@@ -16,7 +16,7 @@ const albumRouter = require('./appServer/routes/album');
 const registerRouter = require('./appServer/routes/register');
 const loginRouter = require('./appServer/routes/login');
 const cuentaRouter = require('./appServer/routes/cuenta');
-
+const apiRouter = require('./appApi/routes/index');
 const app = express();
 
 
@@ -40,6 +40,7 @@ app.use("/album", albumRouter); //añadimos la ruta de album
 app.use("/register", registerRouter); //añadimos la ruta de register
 app.use("/login", loginRouter); //añadimos la ruta de login
 app.use("/cuenta", cuentaRouter); //añadimos la ruta de cuenta
+app.use("/api", apiRouter); //API ROUTER
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
