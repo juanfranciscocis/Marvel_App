@@ -23,7 +23,7 @@ cuenta_page = {
 //GET - Obtener un usuario por id desde el api
 const userObtener = (req, res) => {
     //con el id del usuario, se obtiene el usuario desde el api
-    const path = `/api/users/${req.params.userid}`;
+    const path = `api/users/${req.params.userid}`;
     const requestOptions = { // objeto cargado con las opciones para request
         url: `${apiOptions.server}${path}`,
         method: 'GET',
@@ -52,7 +52,7 @@ const cuenta = (req, res, body) =>{
 
 const cuentaEditar = (req, res, body) =>{
     //con el id del usuario, se obtiene el usuario desde el api
-    const path = `/api/users/${req.params.userid}`;
+    const path = `api/users/${req.params.userid}`;
     const requestOptions = { // objeto cargado con las opciones para request
         url: `${apiOptions.server}${path}`,
         method: 'PUT',
@@ -86,7 +86,7 @@ const cuentaEditar = (req, res, body) =>{
 //DELETE - Eliminar un usuario por id
 const userEliminar = (req, res) => {
     console.log("eliminar");
-    const path = `/api/users/${req.params.userid}`;
+    const path = `api/users/${req.params.userid}`;
     const requestOptions = { // objeto cargado con las opciones para request
         url: `${apiOptions.server}${path}`,
         method: 'DELETE',

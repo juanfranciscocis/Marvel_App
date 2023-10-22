@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'production') {
 
 // CREATE USER - POST
 const userCrear = (req, res) => {
-    const path = '/api/users/';
+    const path = 'api/users/';
     const requestOptions = {
         url: `${apiOptions.server}${path}`,
         method: 'POST',
