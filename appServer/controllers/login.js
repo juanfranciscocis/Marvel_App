@@ -14,7 +14,7 @@ const login = (req, res, next) =>{
 }
 
 const hacerLogin = (req, res, next) =>{
-    path = '/api/users/login/';
+    path = 'api/users/login/';
     requestOptions = {
         url: `${apiOptions.server}${path}`,
         method: 'GET',
