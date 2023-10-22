@@ -16,6 +16,7 @@ const userCrear = (req, res) => {
     }).then((user) => {
         res.status(201).json({
             "message": "User created",
+            "user": user
         });
     }).catch((err) => {
         res.status(400).json({
@@ -40,19 +41,67 @@ const userObtenerUno = (req, res) => {
         res.status(200).json(user);
     }).catch((err) => {
         res.status(404).json({
-            "message": "User not found"
+            "message": "User not found",
         });
     });
 }
 
+//GET - Obtener un usario por email y contraseña
+const userObtenerPorEmail = (req, res) => {
+    console.log(req.body);
+    //solo si el correo y la contraseña coinciden, se obtiene el usuario de la base de datos
+    users.findOne({ correo: req.body.correo, contrasena: req.body.contrasena }).exec().then((user) => {
+        res.status(200).json
+            ({
+                "message": "User found",
+                "user": user
+            });
+            }).catch((err) => {
+                res.status(404).json({
+                    "message": "User not found",
+                });
+            }
+            );
+
+
+
+}
+
 //PUT - Actualizar un usuario por id
 const userActualizar = (req, res) => {
-    res.status(200).json({ "status": "success" });
+    users.findById(req.params.userid).exec().then((user) => {
+        user.nombre = req.body.nombre;
+        user.apellido = req.body.apellido;
+        user.nombreUsuario = req.body.nombreUsuario;
+        user.telefono = req.body.telefono;
+        user.correo = req.body.correo;
+        user.contrasena = req.body.contrasena;
+        user.save().then(() => {
+            res.status(200).json({
+                "message": "User updated",
+                "user": user
+
+            });
+        }).catch((err) => {
+            res.status(400).json({
+                "message": "Error updating user,verify the data"
+            });
+        });
+
+    });
 }
 
 //DELETE - Eliminar un usuario por id
 const userEliminar = (req, res) => {
-    res.status(204).json({ "status": "success" });
+    users.findByIdAndRemove(req.params.userid).exec().then(() => {
+        res.status(204).json({
+            "message": "User deleted"
+        });
+    }).catch((err) => {
+        res.status(404).json({
+            "message": "User not found"
+        });
+    });
 }
 
 module.exports = {
@@ -60,7 +109,9 @@ module.exports = {
     userObtenerTodos, //GET
     userObtenerUno, //GET
     userActualizar, //PUT
-    userEliminar //DELETE
+    userEliminar, //DELETE
+    userObtenerPorEmail //GET
+
 }
 
 

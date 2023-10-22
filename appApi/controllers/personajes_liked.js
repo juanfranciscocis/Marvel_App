@@ -32,13 +32,40 @@ const personaje_likedCrear = (req, res) => {
 }
 
 //UPDATE - Actualizar un personaje liked por id (AGREGAR UN NUEVO PERSONAJE LIKED)
-const personaje_likedActualizar = (req, res) => {
-    res.status(200).json({ "status": "success" });
+const personaje_likedActualizar = async (req, res) => {
+    persoanjes_db = await personaje_liked.find({idUsuario: req.params.userid}).exec();
+    console.log(persoanjes_db);
+    persoanjes_db = persoanjes_db[0].idPersonaje;
+    persoanjes_db.push(req.body.idPersonaje);
+    console.log(persoanjes_db);
+    personaje_liked.updateOne({idUsuario: req.params.userid}, {idPersonaje: persoanjes_db}).exec().then(() => {
+        res.status(200).json({
+            "message": "Personaje liked updated"
+        });
+    }).catch((err) => {
+        res.status(400).json({
+            "message": "Error updating personaje liked,verify the data"
+        });
+    });
 }
 
-//DELETE - Eliminar un personaje liked por id (CUANDO EL USUARIO ELIMINA SU CUENTA SE ELIMINAN SUS LIKES)
-const personaje_likedEliminar = (req, res) => {
-    res.status(204).json({ "status": "success" });
+//UPDATE DELETE ONE - Eliminar un personaje liked por id (CUANDO EL USUARIO ELIMINA SU CUENTA SE ELIMINAN SUS LIKES)
+const personaje_likedEliminar = async (req, res) => {
+    persoanjes_db = await personaje_liked.find({idUsuario: req.body.userid}).exec();
+    console.log(persoanjes_db);
+    persoanjes_db = persoanjes_db[0].idPersonaje;
+    persoanjes_db.remove(req.body.idPersonaje);
+    console.log(persoanjes_db);
+    personaje_liked.updateOne({idUsuario: req.body.userid}, {idPersonaje: persoanjes_db}).exec().then(() => {
+        res.status(200).json({
+            "message": "Personaje liked updated"
+        });
+    }).catch((err) => {
+        res.status(400).json({
+            "message": "Error updating personaje liked,verify the data"
+        });
+    });
+
 }
 
 

@@ -9,17 +9,28 @@ router
     .post(ctrlUsers.userCrear)
     .get(ctrlUsers.userObtenerTodos);
 
+
+
+router
+    .route('/users/login/')
+    .get(ctrlUsers.userObtenerPorEmail);
+
 router
     .route('/users/:userid')
     .get(ctrlUsers.userObtenerUno)
     .put(ctrlUsers.userActualizar)
     .delete(ctrlUsers.userEliminar);
 
+
+
 router
     .route('/personajes_liked/:userid')
     .get(ctrlPersonajes_liked.personaje_likedObtenerTodos)
     .post(ctrlPersonajes_liked.personaje_likedCrear)
-    .put(ctrlPersonajes_liked.personaje_likedActualizar)
-    .delete(ctrlPersonajes_liked.personaje_likedEliminar);
+    .put(ctrlPersonajes_liked.personaje_likedActualizar);
+
+router
+    .route('/personajes_liked/')
+    .put(ctrlPersonajes_liked.personaje_likedEliminar);
 
 module.exports = router;

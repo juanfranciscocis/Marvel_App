@@ -27,25 +27,25 @@ block content
               | &iquest;Ya tienes cuenta?
               a.inicia_sesion(href='/login')   Inicia sesi&oacute;n
             br
-            form.custom-form(action='/registrar_usuario' method='post')
+            form.custom-form(action method='post' role='form')
               .form-group
-                label.card-subtitle(for='nombre') Nombre
-                input#nombre.form-control(type='text' placeholder='Nombre')
+                label.card-subtitle(for="nombre") Nombre
+                input#nombre.form-control(type='text' name="nombre" placeholder='Nombre')
               .form-group
                 label.card-subtitle(for='apellidos') Apellidos
-                input#apellidos.form-control(type='text' placeholder='Apellidos')
+                input#apellidos.form-control(type='text' placeholder='Apellidos' name='apellidos')
               .form-group
                 label.card-subtitle(for='username') Nombre de usuario
-                input#username.form-control(type='text' placeholder='Nombre de usuario')
+                input#username.form-control(type='text' placeholder='Nombre de usuario' name='username')
               .form-group
                 label.card-subtitle(for='telefono') Telefono
-                input#telefono.form-control(type='text' placeholder='Telefono')
+                input#telefono.form-control(type='text' placeholder='Telefono' name='telefono')
               .form-group
                 label.card-subtitle(for='email') Correo electr&oacute;nico
-                input#email.form-control(type='text' placeholder='Correo electrónico')
+                input#email.form-control(type='text' placeholder='Correo electrónico' name='email')
               .form-group
                 label.card-subtitle(for='password') Contrase&ntilde;a
-                input#password.form-control(type='password' placeholder='Contraseña')
+                input#password.form-control(type='password' placeholder='Contraseña'  name='password')
               .form-group.text-center
                 button.btn.btn-outline-dark.btn-danger(type='submit' style='width: 80%') Registrarse
 

@@ -163,4 +163,8 @@ main {
     margin: 15px; /* Add margin to separate forms */
 }
 
+.display-none{
+    display: none;
+}
+
 /* Rest of your CSS styles... */

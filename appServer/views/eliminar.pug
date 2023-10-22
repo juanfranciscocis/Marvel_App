@@ -22,6 +22,7 @@ block content
           .card-header.title AJUSTES DE CUENTA
           .card-body
             div(style='display: flex; justify-content: center; align-items: center; flex-direction: column;')
+              img(src=cuenta_page.imagen)
               h1.card-title #{cuenta_page.nombre}
               h5.card-title #{cuenta_page.nombreUsuario}
               h5.card-title #{cuenta_page.correo}
@@ -60,8 +61,7 @@ block content
 
               .row
                 .form-group
-                  - const id = cuenta_page._id
-                  a.btn.btn-danger.w-100(type='submit' href='eliminar/' + id) Eliminar Cuenta
+                  a.btn.btn-danger.w-100(type='submit' href='eliminar') Eliminar Cuenta
                 .form-group.display-none
                   label.card-subtitle.display-none(for='id') ID
                   input#id.form-control.display-none(type='text' placeholder='ID' value= cuenta_page._id name='id')
