@@ -1,6 +1,8 @@
 //conection to mongodb
 const mongoose = require('mongoose');
 
+
+
 //STRING DE CONEXION -> db uri
 const dbURI = 'mongodb+srv://juanfrancistm2011:06012002jF_@marveldb.rejhjcx.mongodb.net/?retryWrites=true&w=majority';
 

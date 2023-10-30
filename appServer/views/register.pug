@@ -21,6 +21,10 @@ block content
       #columnas_personajes(style='display: flex; justify-content: space-around;')
         .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
           .card-header.title BIENVENIDO A LA MARVEL WIKI
+          if errorContenido != null
+            .alert.alert-danger(style='margin-top: 1em; margin-left: 1em; margin-right: 1em;')
+              strong #{errorContenido}
+
           .card-body
             h2.card-subtitle.center(style='margin-bottom: 0.5em; font-size: 3em;  text-align: center;') REGISTRATE PARA ACCEDER A TODO EL CONTENIDO
             h4.card-subtitle.center

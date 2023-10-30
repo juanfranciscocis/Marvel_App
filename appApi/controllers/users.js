@@ -49,23 +49,26 @@ const userObtenerUno = (req, res) => {
 //GET - Obtener un usario por email y contraseña
 const userObtenerPorEmail = (req, res) => {
     console.log(req.body);
-    //solo si el correo y la contraseña coinciden, se obtiene el usuario de la base de datos
+
+    // Buscar un usuario donde el correo y la contraseña coincidan
     users.findOne({ correo: req.body.correo, contrasena: req.body.contrasena }).exec().then((user) => {
-        res.status(200).json
-            ({
+        if (user) {
+            res.status(200).json({
                 "message": "User found",
                 "user": user
             });
-            }).catch((err) => {
-                res.status(404).json({
-                    "message": "User not found",
-                });
-            }
-            );
-
-
-
+        } else {
+            res.status(404).json({
+                "message": "User not found",
+            });
+        }
+    }).catch((err) => {
+        res.status(500).json({
+            "message": "Error searching for user",
+        });
+    });
 }
+
 
 //PUT - Actualizar un usuario por id
 const userActualizar = (req, res) => {
