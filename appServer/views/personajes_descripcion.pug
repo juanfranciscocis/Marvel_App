@@ -21,11 +21,11 @@ block content
                         img.logo_main(src='../images/home_page/logoMarvel.png')
                     img#imagen_personaje_descrip.imagen_personaje_descrip(src=personajes_descripcion_page.imagen_personaje)
                     .like-container
-                        img#imagen_like_descrip.imagen_like_descrip(src='../images/personajes_descripcion/like.png')
+                        img#imagen_like_descrip.imagen_like_descrip(src=personajes_descripcion_page.image)
                         h3#numero_likes_descrip.numero_likes_descrip #{personajes_descripcion_page.numero_likes}
                 .col-md-6
                     .card
                         .card-body
-                            h5#titulo_descrip.card-title #{personajes_descripcion_page.titulo_personaje}
-                            p#descrip_descrip.card-text #{personajes_descripcion_page.descripcion_personaje}
+                            h5#titulo_descrip.card-title #{personajes_descripcion_page.name}
+                            p#descripcion_descrip.card-text #{personajes_descripcion_page.description}
                 br

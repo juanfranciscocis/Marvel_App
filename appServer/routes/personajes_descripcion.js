@@ -6,6 +6,6 @@ const router = express.Router();
 const {personajes_descripcion} = require("../controllers/personajes_descripcion");
 
 /* GET personajes_descripcion */
-router.get('/', personajes_descripcion);
+router.get('/:id', personajes_descripcion);
 
 module.exports = router;

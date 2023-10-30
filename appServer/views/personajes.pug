@@ -20,6 +20,7 @@ block content
             #columnas_personajes.row
                 for personaje,index in personajes_page
                     .col-md-4
-                        img.imagen_personajes(src=personaje)
+                        a(href=`/personajes_descripcion/${personaje.id}`)
+                            img.imagen_personajes(src=personaje.image).w-75.h-100
                     if index%3 === 2
                         .con-espacio-entre-filas
