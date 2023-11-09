@@ -18,7 +18,7 @@ const get_random_personajes = async () => {
                 apikey: apiKeyPublic,
                 hash: hash,
                 limit: 100,
-                offset: Math.floor(Math.random() * 1000),
+                offset: Math.floor(Math.random() * 1000), //generar aleatorios personajes de la api
             }
         });
 

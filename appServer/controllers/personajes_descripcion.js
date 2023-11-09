@@ -39,12 +39,11 @@ const personajes_descripcion_get = async (req) => {
     return character;
 }
 
+
+
 const personajes_descripcion = async (req, res, next) => {
     const personajes_descripcion_page = await personajes_descripcion_get(req);
-    res.render('personajes_descripcion', {
-        title: 'PERSONAJES DESCRIPCION',
-        personajes_descripcion_page: personajes_descripcion_page
-    });
+    res.render('personajes_descripcion', {title: 'PERSONAJES DESCRIPCION',personajes_descripcion_page: personajes_descripcion_page});
 }
 
 module.exports = {

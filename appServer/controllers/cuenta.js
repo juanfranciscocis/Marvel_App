@@ -25,11 +25,8 @@ cuenta_page = {
 const userObtener = (req, res,next,error=null) => {
     //con el id del usuario, se obtiene el usuario desde el api
     const path = `/api/users/${req.params.userid}`;
-    const requestOptions = { // objeto cargado con las opciones para request
-        url: `${apiOptions.server}${path}`,
-        method: 'GET',
-        json: {}
-    };
+
+    /**/
 /*    request(
         requestOptions,
         (err, response, body) => {

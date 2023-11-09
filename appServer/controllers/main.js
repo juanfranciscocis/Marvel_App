@@ -8,7 +8,7 @@ personaje = {
 }
 
 const index = (req, res, next) =>{
-    res.render('index', { title: 'MARVEL WIKI', personaje});
+    res.redirect('/personajes');
 }
 
 module.exports = {
