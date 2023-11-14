@@ -17,8 +17,8 @@ block content
     a(href='/')
       img.logo_main(src='../images/home_page/logoMarvel.png')
     .container.margen
-      #columnas_personajes(style='display: flex; justify-content: space-around;')
-        .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
+      #columnas_personajes.contenedorCard(style='display: flex; justify-content: space-around;')
+        .card.neon.rounded.cardPersonal.border.border-danger(style='width: 75%; height: 100%;')
           .card-header.title AJUSTES DE CUENTA
           if errorContenido != null
             .alert.alert-danger(style='margin-top: 1em; margin-left: 1em; margin-right: 1em;')
@@ -30,6 +30,7 @@ block content
               h5.card-title #{cuenta_page.correo}
             br
             form(action method='post' role='form')
+              .espacio
               .row
                 .col-md-6
                     .form-group
@@ -39,6 +40,7 @@ block content
                     .form-group
                       label.card-subtitle(for='apellido') Cambiar Apellido
                       input#apellido.form-control(type='text' placeholder='Cambiar Apellido' value= cuenta_page.apellido name='apellido')
+              .espacio
               .row
                 .col-md-6
                     .form-group
@@ -48,6 +50,7 @@ block content
                     .form-group
                       label.card-subtitle(for='telefono') Cambiar Telefono
                       input#telefono.form-control(type='text' placeholder='Cambiar Telefono' value= cuenta_page.telefono name='telefono')
+              .espacio
               .row
                 .col-md-6
                     .form-group
@@ -57,14 +60,17 @@ block content
                     .form-group
                       label.card-subtitle(for='password') Cambiar Clave
                       input#password.form-control(type='password' placeholder='Cambiar Clave' value= cuenta_page.contrasena name='password')
+              .espacio
               .row
-                .form-group
-                  button.btn.btn-warning.w-100(type='submit') Cambiar Datos
+                .col-md-6
+                  .form-group
+                    button.btn.btn-outline-white.btn-warning.w-100(type='submit') Cambiar Datos
 
-              .row
-                .form-group
-                  - const id = cuenta_page._id
-                  a.btn.btn-danger.w-100(type='submit' href='eliminar/' + id) Eliminar Cuenta
+
+                .col-md-6
+                  .form-group
+                    - const id = cuenta_page._id
+                    a.botonWarning.btn.btn-outline-white.btn-danger.w-100(type='submit' href='eliminar/' + id) Eliminar Cuenta
                 .form-group.display-none
                   label.card-subtitle.display-none(for='id') ID
                   input#id.form-control.display-none(type='text' placeholder='ID' value= cuenta_page._id name='id')

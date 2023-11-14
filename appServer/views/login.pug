@@ -18,14 +18,13 @@ block content
         a(href='/')
             img.logo_main(src='../images/home_page/logoMarvel.png')
         .container.margen
-            #columnas_personajes(style='display: flex; justify-content: space-around;')
-                .card.text-black.bg-secondary.border-dark.mb-3(style='width: 75%; height: 100%;')
-                    .card-header.title BIENVENIDO A LA MARVEL WIKI
+            #columnas_personajes.contenedorCard(style='display: flex; justify-content: space-around;')
+                .card.neon.rounded.cardPersonal.border.border-danger.mb-3(style='width: 75%; height: 100%;')
                     if errorContenido != null
                         .alert.alert-danger(style='margin-top: 1em; margin-left: 1em; margin-right: 1em;')
                             strong #{errorContenido}
                     .card-body
-                        h2.card-subtitle.center(style='margin-bottom: 0.5em; font-size: 3em;  text-align: center;') INGRESA PARA ACCEDER A TODO EL CONTENIDO
+                        h2.card-subtitle.center(style='margin-bottom: 0.5em; font-size: 2em;  text-align: center;') INGRESA PARA ACCEDER A TODO EL CONTENIDO
                         h4.card-subtitle.center
                             | &iquest;No tienes cuenta?
                             a.inicia_sesion(href='/register') Reg&iacute;strate
@@ -34,8 +33,10 @@ block content
                             .form-group
                                 label.card-subtitle(for='email') Correo electr&oacute;nico
                                 input#email.form-control(type='text' placeholder='Correo electrónico' name='email')
+                            .espacio
                             .form-group
                                 label.card-subtitle(for='password') Contrase&ntilde;a
                                 input#password.form-control(type='password' placeholder='Contraseña' name='password')
+                            .espacio
                             .form-group.text-center
-                                button.btn.btn-outline-dark.btn-danger(type='submit' style='width: 80%') Inicia Sesi&oacute;n
+                                button.btn.btn-outline-white.btn-danger(type='submit' style='width: 80%') Inicia Sesi&oacute;n

@@ -130,7 +130,7 @@ main {
 }
 
 .inicia_sesion{
-    color: #2c2cb4 !important;
+    color: #000000 !important;
     margin-left: 10px;
 }
 
@@ -151,6 +151,45 @@ main {
 .text-center{
     text-align: center;
 }
+
+
+
+.cardPersonal{
+    background-color: rgba(192, 32, 32, 0.4);
+}
+
+.neon{
+    border: 5px solid #f00; /* Red neon border */
+    box-shadow: 0 0 50px #f00; /* Red neon glow */
+
+}
+
+.card-subtitle{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main{
+    height: 100vh;
+}
+
+.contenedorCard{
+    display: flex;
+}
+
+.espacio{
+    margin-top: 1.5em;
+}
+
+.btn{
+    box-shadow: 0 0 20px #440000; /* Red neon glow */
+}
+
+
+
+
 
 
 
