@@ -15,13 +15,17 @@ block content
       img#cuenta_nav.cuenta_nav(src='../images/home_page/account.png')
   main
     img.logo_main(src='../images/home_page/logoMarvel.png')
-    img#flecha_izquierda_home_page.flecha_izquierda(src='../images/home_page/izquierda.png')
-    .main_cards
+    a(href='')
+      img#flecha_izquierda_home_page.flecha_izquierda(src='../images/home_page/izquierda.png')
+    a(href=`/personajes_descripcion/${personaje.id}`).main_cards.neon
       img#imagen_personaje_home_page.img_card(src=personaje.imagen)
       .contenido_card
         h2#titulo_personaje_home_page #{personaje.titulo}
-        p#descripcion_personaje_home_page #{personaje.descripcion_personaje}
-    img#flecha_derecha_home_page.flecha_derecha(src='../images/home_page/derecha.png')
+        p#descripcion_personaje_home_page #{personaje.descripcion}
+    a(href='')
+      img#flecha_derecha_home_page.flecha_derecha(src='../images/home_page/derecha.png')
+
+
 
 
 

@@ -96,6 +96,17 @@ main {
     text-align: center;
     position: relative;
     z-index: 2;
+    background-color: rgba(192, 32, 32, 0.75);
+}
+
+
+.neon{
+    border: 1px solid #f00; /* Red neon border */
+    box-shadow: 0 0 50px #f00; /* Red neon glow */
+    /* round corners */
+    border-radius: 5px;
+
+
 }
 
 
@@ -168,6 +179,7 @@ main::before {
 
 .card-body {
     text-align: left; /* Alinear el contenido del cuerpo de la card a la izquierda */
+    color: white;
 }
 
 .card-title {
@@ -183,4 +195,6 @@ main::before {
 /* Puedes seguir personalizando el diseño general según tus preferencias */
 .row{
     margin-bottom: 2em;
+    /*items de la fila pegados arriba y abajo*/
+    align-items: center;
 }
