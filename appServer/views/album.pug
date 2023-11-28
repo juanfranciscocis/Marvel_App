@@ -20,11 +20,14 @@ block content
         .pop_up
             //for each card in cards
             for album_card in cards
-                .card.card_personal
-                    img.imagenes(src= album_card.imagen_usuario)
-                    h2 #{album_card.nombre_usuario}
-                    img.imagenes(src=album_card.top_personajes[0])
-                    img.imagenes(src=album_card.top_personajes[1])
-                    img.imagenes(src=album_card.top_personajes[2])
-                    img.imagenes(src=album_card.top_personajes[3])
+
+
+                    .card.card_personal.neon
+                        a.nada(href=`mi_album/${album_card.id_usuario}`)
+                            h2 #{album_card.nombre_usuario}
+                        img.imagenes(src=album_card.top_personajes[0])
+                        img.imagenes(src=album_card.top_personajes[1])
+                        img.imagenes(src=album_card.top_personajes[2])
+                        img.imagenes(src=album_card.top_personajes[3])
+                        img.imagenes(src=album_card.top_personajes[4])
         br

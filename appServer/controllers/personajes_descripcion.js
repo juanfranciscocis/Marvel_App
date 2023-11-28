@@ -46,6 +46,15 @@ const personajes_descripcion = async (req, res, next) => {
     res.render('personajes_descripcion', {title: 'PERSONAJES DESCRIPCION',personajes_descripcion_page: personajes_descripcion_page});
 }
 
+const personajes_descripcion_like = async (req, res, next) => {
+    //aqui hacemos el axios!
+
+
+    //redirect home
+    res.redirect('/');
+}
+
 module.exports = {
     personajes_descripcion, //index - GET
+    personajes_descripcion_like, //index - GET
 };
