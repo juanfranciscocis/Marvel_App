@@ -1,5 +1,7 @@
 //controllers
 
+//require cookie
+const cookie = require('js-cookie');
 // controllers
 //const request = require('request');
 const axios = require('axios');
@@ -10,6 +12,7 @@ const apiOptions = {
 if (process.env.NODE_ENV === 'production') {
     apiOptions.server ='https://wiki-marvel-git-2a04b3464a8d.herokuapp.com' // server heroku - producción
 }
+
 
 
 
@@ -50,6 +53,10 @@ const userObtener = (req, res,next,error=null) => {
             console.log(error);
             cuenta(req, res, response.data,error.errorContenido);
         }else {
+            //reset cookie
+            res.clearCookie('user');
+            res.cookie('user', response.data._id);
+            console.log('Cookie:', req.cookies.user);
             cuenta(req, res, response.data);
         }
     })

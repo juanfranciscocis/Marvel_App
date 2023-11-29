@@ -58,4 +58,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+const cookieParser1 = require('cookie-parser')
+app.use(cookieParser1());
+
 module.exports = app;
