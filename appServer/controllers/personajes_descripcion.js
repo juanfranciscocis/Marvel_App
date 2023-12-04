@@ -1,6 +1,15 @@
 //controllers
 const axios = require('axios');
 
+// controllers
+// definir los URL's para los ambientes de desarrollo y producción
+const apiOptions = {
+    server: 'http://localhost:3000' // server local - desarrollo
+};
+if (process.env.NODE_ENV === 'production') {
+    apiOptions.server ='https://wiki-marvel-git-2a04b3464a8d.herokuapp.com' // server heroku - producción
+}
+
 // personajes_descripcion - GET
 /*personajes_descripcion_page = {
     imagen_personaje: "../images/personajes_descripcion/spiderMan.png",
@@ -47,11 +56,27 @@ const personajes_descripcion = async (req, res, next) => {
 }
 
 const personajes_descripcion_like = async (req, res, next) => {
-    //aqui hacemos el axios!
+    //obtener el id del usuario guardado en la cookie
+    const user = req.cookies.user;
+    //si no hay cookie, redirigir a login
+    if (!user){
+        res.redirect('/login');
+    }
+
+    // darle like al personaje
+    const path = `/api/personajes_liked/${user}`;
+    const response = await axios.put(`${apiOptions.server}${path}`,{
+        idPersonaje: req.params.id,
+    });
+    console.log(response.data);
+
+    //redirigir a la pagina de personaje
+    res.redirect(`/`);
 
 
-    //redirect home
-    res.redirect('/');
+
+
+
 }
 
 module.exports = {

@@ -19,12 +19,11 @@ block content
         .centro
             .centrar_texto
                 h2#nombre_usuario_mialbum.nombre_usuario_mialbum #{mi_album_page.usuario.nombre_usuario}
-                img#imagen_perfil_mi_album.imagen_perfil_mi_album(src= mi_album_page.usuario.imagen_usuario)
             .container.margen
                 #columnas_personajes.row
                     each personaje,index in mi_album_page.personajes_usuario
                         .col-md-4
-                            img.imagen_personajes(src=personaje)
+                            img.imagen_personajes.imagenp(src=personaje)
                         if index%3 === 2
                             .con-espacio-entre-filas
 

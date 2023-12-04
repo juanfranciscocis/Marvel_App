@@ -13,6 +13,14 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 
+const isLogged = (req, res, next) => {
+    //retrive cookie
+    const user = req.cookies.user;
+    console.log('Cookie Login:', user);
+    return user ? res.redirect(`/cuenta/${user}`) : false;
+}
+
+
 // CREATE USER - POST
 const userCrear = (req, res) => {
     const path = '/api/users/';
@@ -48,9 +56,17 @@ const userCrear = (req, res) => {
         correo: req.body.email,
         contrasena: req.body.password,
     })
-    .then((response) => {
+    .then(async (response) => {
+
+        //crear personajes like vacio
+        const path2 = `/api/personajes_liked/${response.data.user._id}`;
+        await axios.post(`${apiOptions.server}${path2}`, {
+            idPersonaje: [],
+            idUsuario: response.data.user._id,
+        })
+
         console.log(response.data);
-        const path = '/cuenta/'+ response.data.user._id;
+        const path = '/cuenta/' + response.data.user._id;
         console.log(path);
         res.redirect(path);
     })
@@ -58,12 +74,15 @@ const userCrear = (req, res) => {
         console.log(error);
         res.render('register', { title: 'REGISTER', errorContenido: "ERROR: Verificar los datos ingresados"})
     });
+
+
 }
 
 
 
 // register - GET
 const register = (req, res, next) =>{
+    isLogged(req, res, next);
     res.render('register', { title: 'REGISTER' });
 }
 

@@ -1,7 +1,6 @@
 //controllers
 
 //require cookie
-const cookie = require('js-cookie');
 // controllers
 //const request = require('request');
 const axios = require('axios');

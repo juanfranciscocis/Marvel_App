@@ -143,3 +143,7 @@ display: flex;
     align-items: center;
     color: white;
 }
+
+.imagenp{
+    max-width: 25em;
+}

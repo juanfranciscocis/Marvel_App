@@ -9,8 +9,18 @@ const apiOptions = {
 if (process.env.NODE_ENV === 'production') {
     apiOptions.server ='https://wiki-marvel-git-2a04b3464a8d.herokuapp.com' // server heroku - producción
 }
+const isLogged = (req, res, next) => {
+    //retrive cookie
+    const user = req.cookies.user;
+    console.log('Cookie Login:', user);
+    return user ? res.redirect(`/cuenta/${user}`) : false;
+}
+
+
+
 // login - GET
 const login = (req, res, next) =>{
+    isLogged(req, res, next);
     res.render('login', { title: 'LOGIN', errorContenido: null});
 }
 
