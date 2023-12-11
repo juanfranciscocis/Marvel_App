@@ -16,6 +16,10 @@ router
     .get(ctrlUsers.userObtenerPorEmail);
 
 router
+    .route('/login')
+    .post(ctrlUsers.userObtenerPorEmail);
+
+router
     .route('/users/:userid')
     .get(ctrlUsers.userObtenerUno)
     .put(ctrlUsers.userActualizar)

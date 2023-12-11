@@ -5,28 +5,18 @@ export const GetLogin = async (email, password,navigate) =>  {
     console.log(email);
     console.log(password);
     const apiOptions = {
-        server:' https://wiki-marvel-git-2a04b3464a8d.herokuapp.com' // server heroku - producción
+        server:'http://localhost:3000' // server local - desarrollo
     };
     if (process.env.NODE_ENV === 'production') {
         apiOptions.server ='https://wiki-marvel-git-2a04b3464a8d.herokuapp.com' // server heroku - producción
     }
     try {
-        await axios.get(`${apiOptions.server}/api/users/login'`,{
-            data: {
+        const path = '/api/login';
+        const user = await axios.post(`${apiOptions.server}${path}`, {
                 correo: email,
-                contrasena: password
-            }
+                contrasena: password,
         })
-            .then((response) => {
-                console.log(response.data);
-                const path = `www.google.com`;
-                console.log(path);
-                navigate(path);
-            })
-            .catch((error) => {
-                console.log(error);
-                // Handle error here
-            });
+        console.log(user);
     }catch (error) {
         console.log(error);
     }
