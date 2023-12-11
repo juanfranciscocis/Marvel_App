@@ -1,9 +1,18 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React, {useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
 //import css
 import './login.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {GetLogin} from "../services/GetLogin";
 export const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await GetLogin(email, password,navigate);
+    }
     return (
         <main style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <Link to="/">
@@ -19,15 +28,15 @@ export const Login = () => {
                             <h4 className="card-subtitle center">
                                 No tienes cuenta?<Link className="inicia_sesion" to="/register">Registrate</Link>
                             </h4><br />
-                            <form className="custom-form" action="" method="post" role="form">
+                            <form className="custom-form" onSubmit={handleSubmit}>
                                 <div className="form-group">
                                     <label className="card-subtitle" htmlFor="email">Correo electronico</label>
-                                    <input className="form-control" id="email" type="text" placeholder="Correo electrónico" name="email" />
+                                    <input className="form-control" id="email" type="text" placeholder="Correo electrónico" name="email" onChange={event => setEmail(event.target.value)} />
                                 </div>
                                 <div className="espacio"></div>
                                 <div className="form-group">
                                     <label className="card-subtitle" htmlFor="password">Contrasena</label>
-                                    <input className="form-control" id="password" type="password" placeholder="Contraseña" name="password" />
+                                    <input className="form-control" id="password" type="password" placeholder="Contraseña" name="password" onChange={event => setPassword(event.target.value)} />
                                 </div>
                                 <div className="espacio"></div>
                                 <div className="form-group text-center">

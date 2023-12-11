@@ -3,6 +3,10 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const cors = require('cors');
+
+
+
 
 //MONGO REQUIRE
 require('./appApi/models/db'); //INCORPORAR EL MODELO A LA APP
@@ -18,6 +22,12 @@ const loginRouter = require('./appServer/routes/login');
 const cuentaRouter = require('./appServer/routes/cuenta');
 const apiRouter = require('./appApi/routes/index');
 const app = express();
+
+app.use(cors());
+app.use(cors({
+    origin: '*',
+    credentials: true
+}));
 
 
 
@@ -42,6 +52,9 @@ app.use("/login", loginRouter); //añadimos la ruta de login
 app.use("/cuenta", cuentaRouter); //añadimos la ruta de cuenta
 app.use("/api", apiRouter); //API ROUTER
 
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -60,5 +73,7 @@ app.use(function(err, req, res, next) {
 
 const cookieParser1 = require('cookie-parser')
 app.use(cookieParser1());
+
+
 
 module.exports = app;
