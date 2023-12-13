@@ -22,7 +22,7 @@ const personajes_liked_db = async (req, res, next) => {
     const user = req.cookies.user;
     //si no hay cookie, redirigir a login
     if (!user) {
-        res.redirect('https://wiki-marvel-git-2a04b3464a8d.herokuapp.com/cuenta');
+        res.redirect('https://wiki-marvel-git-2a04b3464a8d.herokuapp.com/register');
     }
 
 
