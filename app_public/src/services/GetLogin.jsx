@@ -17,6 +17,8 @@ export const GetLogin = async (email, password,navigate) =>  {
                 contrasena: password,
         })
         console.log(user);
+
+        
     }catch (error) {
         console.log(error);
     }
