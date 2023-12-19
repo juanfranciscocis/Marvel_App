@@ -3,8 +3,8 @@ extends layout
 block content
     link(rel='stylesheet' href='/stylesheets/mi_album.css')
     nav
-        img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png')
-        input#input_search_nav.input_search_nav
+        img#lupa_img_nav.lupa_nav(src='../images/home_page/lupa.png', style='visibility: hidden;')
+        input#input_search_nav.input_search_nav(style='visibility: hidden;')
         a(href='personajes')
             #personajes_nav.personajes_nav PERSONAJES
         a(href='album')
