@@ -18,7 +18,7 @@ block content
             img.logo_main(src='../images/home_page/logoMarvel.png')
         .centro
             .centrar_texto
-                h2#nombre_usuario_mialbum.nombre_usuario_mialbum #{mi_album_page.usuario.nombre_usuario}
+                h2#nombre_usuario_mialbum.nombre_usuario_mialbum #{mi_album_page.usuario.nombre_usuario.nombreUsuario}
             .container.margen
                 #columnas_personajes.row
                     each personaje,index in mi_album_page.personajes_usuario

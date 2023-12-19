@@ -138,13 +138,32 @@ mi_album_page = {
     ],
 }
 
+let user;
+const getUser = async () => {
+    const user_id = req.cookies.user;
+    const path = `/api/users/${user_id}`;
+    await axios.get(`${apiOptions.server}${path}`).then(
+        response => {
+            console.log(response.data);
+            user = response.data;
+            return user;
+        }
+    )
+
+
+
+
+}
+
+
 const mi_album = async (req, res, next) => {
     personajes_liked = [];
     iamgenes_personajes = [];
+    //const user = await getUser();
     await buscar_imagenes_marvel(req, res, next);
     mi_album_page.personajes_usuario = iamgenes_personajes;
-    mi_album_page.usuario.nombre_usuario = req.cookies.user;
-    console.log(mi_album_page);
+    await getUser();
+    mi_album_page.usuario.nombre_usuario = user;
     res.render('mi_album', {title: 'MI_ALBUM', mi_album_page});
 }
 
@@ -152,10 +171,11 @@ const mi_album = async (req, res, next) => {
 const tu_album = async (req, res, next) => {
     personajes_liked = [];
     iamgenes_personajes = [];
+    //const user = await getUser();
     await buscar_imagenes_marvel_tu(req, res, next);
     mi_album_page.personajes_usuario = iamgenes_personajes;
-    mi_album_page.usuario.nombre_usuario = req.cookies.user;
-    console.log(mi_album_page);
+    await getUser();
+    mi_album_page.usuario.nombre_usuario = user;
     res.render('mi_album', {title: 'ALBUM', mi_album_page});
 }
 
