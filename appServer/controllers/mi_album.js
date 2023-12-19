@@ -139,7 +139,7 @@ mi_album_page = {
 }
 
 let user;
-const getUser = async () => {
+const getUser = async (req, res, next) => {
     const user_id = req.cookies.user;
     const path = `/api/users/${user_id}`;
     await axios.get(`${apiOptions.server}${path}`).then(
@@ -162,7 +162,7 @@ const mi_album = async (req, res, next) => {
     //const user = await getUser();
     await buscar_imagenes_marvel(req, res, next);
     mi_album_page.personajes_usuario = iamgenes_personajes;
-    await getUser();
+    await getUser(req, res, next);
     mi_album_page.usuario.nombre_usuario = user;
     res.render('mi_album', {title: 'MI_ALBUM', mi_album_page});
 }
@@ -174,7 +174,7 @@ const tu_album = async (req, res, next) => {
     //const user = await getUser();
     await buscar_imagenes_marvel_tu(req, res, next);
     mi_album_page.personajes_usuario = iamgenes_personajes;
-    await getUser();
+    await getUser(req, res, next);
     mi_album_page.usuario.nombre_usuario = user;
     res.render('mi_album', {title: 'ALBUM', mi_album_page});
 }
